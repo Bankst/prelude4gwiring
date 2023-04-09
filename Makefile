@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:94915a5255d08aeddb55c73506a31bdc39873550a488c40aa5470ba6fb40c4e8
-size 114
+generate:
+	wireviz engine-100.yaml --prepend-file engine-100-connectors.yaml -o out/engine-100
+
+clean:
+	@rm out/*

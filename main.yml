@@ -1,3 +1,52 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:33dd7706c1a1cff6aad78f93f653c19c0384280e46dccff1bbad360f65c6088b
-size 1109
+connectors:
+  C420:
+    pincount: 3
+    notes: Under-hood Fuse/Relay Box (TO C945)
+  C421:
+    pincount: 3
+    notes: Under-hood Fuse/Relay Box (TO C946)
+  C422:
+    pincount: 7
+    notes: Under-hood Fuse/Relay Box (TO C947)
+  C423:
+    pincount: 9
+    notes: Under-hood Fuse/Relay Box (TO C948)
+  C424:
+    pincount: 11
+    notes: Under-hood Fuse/Relay Box (TO C949)
+  C425:
+    pincount: 14
+    notes: Engine Wire Harness (TO C133)
+  C426:
+    pincount: 10
+    notes: Engine Wire Harness (TO C134)
+  C427:
+    pincount: 2
+    notes: Test Tachometer Connector
+  C428:
+    pincount: 2
+    notes: Engine Wire Harness (TO C132)
+  C429:
+    <<: *round_2p
+    notes: Intake Air Control Solenoid Valve (DOHC Only)
+  C430:
+    pincount: 2
+    notes: ABS - Right Front Wheel Sensor
+  C431:
+    pincount: 10
+    notes: ABS Solenoids
+  C432:
+    pincount: 4
+    notes: Engine Wire Harness (M/T) (TO C135)
+  C433:
+    pincount: 14
+    notes: Engine Wire Harness (TO C136)
+  C434:
+    pincount: 2
+    note: ABS Pressure Switch
+  C435:
+    pincount: 2
+    note: ABS Motor
+  C484:
+    pincount: 1
+    notes: VTEC (TO C139)

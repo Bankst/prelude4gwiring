@@ -1,3 +1,105 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3c46e1bcd20aed45fc3c0072aac255d7a3488900e3c19197d8a5873ee7907038
-size 2116
+# Engine cables and connections
+cables:
+  W100: # Alternator Power
+    wirecount: 1
+    colors: [BK]
+  W101: # Alternator Control
+    wirecount: 4
+    colors: [WHRD, WHGN, WHBU, BKYE]
+
+  W106: # IAC Signal
+    wirecount: 1
+    colors: [BKBU]
+  # W106G: # IAC GND
+  #   wirecount: 1
+  #   colors: [YEBK]
+
+  W107: # Injector Resistor
+    wirecount: 9
+    colors: [RDBK, RDBK, RDBK, RDBK, BN, RD, BU, YE, YEBK]
+
+  W108: # IAT to C133
+    wirecount: 1
+    colors: [GNWH]
+
+  # W109G: # IAB to GND
+  #   wirecount: 1
+  #   colors: [YEBK]
+
+  W125: # Dizzy Signals to C133/C136 Bulkhead
+    wirecount: 8
+    colors: [OG, WH, OGBU, WHBU, BUGN, BUYE, YEGN, BU]
+
+  W138: # VTEC Solenoid
+    wirecount: 1
+    colors: [GNYE]
+
+  # W114: # HO2S
+  #   wirecount: 4
+  #   colors: [WH, GNWH, YEBK, OGWH]
+
+connections:
+  - # Alternator harness - 4pin to C136
+    - C136: [WHT/RED, WHT/GRN, WHT/BLU]
+    - W101: [1, 2, 3]
+    - C101: [WHT/RED, WHT/GRN, WHT/BLU]
+  - # Alternator harness - IGN+ to C131
+    - C131: BLK/YEL2
+    - W101: 4
+    - C101: BLK/YEL
+
+  - # Alternator V+
+    - T101
+    - W100: 1
+    - T102
+
+  - # IACV to ECU bulkhead C133
+    - C106: 2
+    - W106: 1
+    - C133: 8
+  # - # IACV to GND
+  #   - C106: 1
+  #   - W106G: 1
+  #   - G101: 1
+
+  - # Injector Box to IGN+ (C133)
+    - C131: YEL/BLK3
+    - W107: 9
+    - C107: YEL/BLK3
+  - # Injector Box to Injectors
+    - [C102, C103, C104, C105]
+    - W107: [1-4]
+    - C107: [1, 2, 4, 5]
+  - # Inj1 to ECU bulkhead C133
+    - C102: 2
+    - W107: 5
+    - C133: 4
+  - # Inj2 to ECU bulkhead C133
+    - C103: 2
+    - W107: 6
+    - C133: 5
+  - # Inj3 to ECU bulkhead C133
+    - C104: 2
+    - W107: 7
+    - C133: 6
+  - # Inj4 to ECU bulkhead C133
+    - C105: 2
+    - W107: 8
+    - C133: 7
+
+  - # IAT to ECU bulkhead C133
+    - C108: GRN/WHT2
+    - W108: 1
+    - C133: GRN/WHT2
+
+  - # Dizzy to ECU Bulkhead C133
+    - C125: [ORN3, WHT, ORN/BLU, WHT/BLU, BLU/GRN, BLU/YEL]
+    - W125: [1-6]
+    - C133: [12, 1, 13, 2, 14, 3]
+  - # Dizzy to ECU Bulkhead C136
+    - C125: [YEL/GRN1, BLU]
+    - W125: [7, 8]
+    - C136: [YEL/GRN1, BLU]
+
+  # - # VTEC Solenoid to C139
+    # - C139

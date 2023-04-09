@@ -1,3 +1,178 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:932e86bd49dfc546374ca2eaa4f99f95b9bb9ce0abb28f6c6e107d023743dc05
-size 4591
+# Engine right-side harness
+connectors:
+  # Left Side harness
+  #C310:
+  #  pincount: 2
+  #  notes: EGR Control Solenoid Valve
+  #C320:
+  #  pincount: 3
+  #  notes: MAP Sensor
+  #C321:
+  #  pincount: 2
+  #  notes: Evap Purge Control Solenoid Valve
+
+  C101:
+    pincount: 4
+    notes: Alternator Control
+    pinlabels: [WHT/RED, WHT/GRN, WHT/BLU, BLK/YEL]
+    color: GN
+    # WHT/RED - D6, WHT/GRN - A16
+  C102:
+    pincount: 2
+    notes: No. 1 Fuel Injector
+    pinlabels: [RED/BLK, BRN]
+  C103:
+    pincount: 2
+    notes: No. 2 Fuel Injector
+    pinlabels: [RED/BLK, RED1]
+  C104:
+    pincount: 2
+    notes: No. 3 Fuel Injector
+    pinlabels: [RED/BLK, BLU]
+  C105:
+    pincount: 2
+    notes: No. 4 Fuel Injector
+    pinlabels: [RED/BLK, YEL]
+  C106: &round_2p
+    pincount: 2
+    subtype: female
+    notes: Idle Air Control (IAC) Valve
+    pinlabels: [YEL/BLK, BLK/BLU]
+    # BLK/BLU - A9
+  C107:
+    pincount: 6
+    notes: Injector Resistor
+    pinlabels: [INJ1, INJ2, YEL/BLK3, INJ3, INJ4, NC]
+    pins: [1, 2, 3, 4, 5, NC]
+    # pincolors: [RDBK, RDBK, YEBK, RDBK, RDBK]
+  C108:
+    <<: *round_2p
+    notes: Intake Air Temperature (IAT) Sensor
+    pinlabels: [RED/YEL, GRN/WHT2]
+  C109:
+    <<: *round_2p
+    notes: Intake Air Bypass (IAB) Control Solenoid Valve
+    pinlabels: [BLK/YEL, PNK]
+  C111:
+    <<: *round_2p
+    notes: Power Steering Pressure (PSP) Switch
+    pinlabels: [BLK1, RED/GRN]
+  C112:
+    <<: *round_2p
+    notes: Knock Sensor (KS)
+    pinlabels: [RED/BLU (D3), NC]
+  C113:
+    pincount: 3
+    notes: Throttle Position (TP) Sensor
+    pinlabels: [YEL/WHT (D20), RED/BLK (D11), GRN/WHT2 (D22)]
+  C114:
+    pincount: 4
+    notes: Heated Oxygen Sensor (HO2S)
+    pinlabels: [GRN/WHT2 (GND) (E_GND), WHT(O2_S) (SHLD) (D14), ORN/WHT (HTR_S) (A6), YEL/BLK (GND) (B2/A26)]
+    pins: [1, 2, 3, 4]
+  C115:
+    pincount: 3
+    notes: Vehicle Speed Sensor (VSS)
+    pinlabels: [BLK2, ORN2, BLK/YEL]
+  C117:
+    pincount: 3
+    notes: EGR Valve Lift Sensor
+    pinlabels: [RED/WHT, WHT/BLK, GRN/WHT2]
+  C118: # M/T Only
+    <<: *round_2p
+    notes: Engine Coolant Temperature (ECT) Switch A
+    pinlabels: [UNK1, UNK2]
+  C119: # M/T Only
+    pincount: 1
+    notes: Back-up Light Switch (-)
+  C119:
+    pincount: 1
+    notes: Back-up Light Switch (+)
+  C121:
+    pincount: 4
+    notes: Ignition Coil
+  C122:
+    <<: *round_2p
+    notes: Engine Coolant Temperature (ECT) Sensor
+  C123:
+    pincount: 1
+    notes: Engine Coolant Temperature (ECT) Sending Unit
+  C124:
+    pincount: 1
+    subtype: female
+    notes: Starter Solenoid
+  C125:
+    pincount: 8
+    notes: TDC/CKP/CYP Sensor
+    pinlabels: [ORN3, ORN/BLU, BLU/GRN, YEL/GRN1, WHT, WHT/BLU, BLU/YEL, BLU]
+  C126:
+    pincount: 2
+    notes: Ignition Control Module (ICM)
+    pinlabels: [ICM1 (A21), ICM2 (A22)]
+  C127:
+    <<: *round_2p
+    notes: Engine Coolant Temperature (ECT) Switch B
+  C131:
+    pincount: 10
+    notes: Junction Connector
+    pinlabels: [NC, YEL/BLK1, YEL/BLK2, BLK/YEL1, BLK/YEL2, YEL/BLK3, YEL/BLK4, BLK/YEL3, BLK/YEL4, NC]
+    # YEBK1 - HO2S, YEBK2 - ECU IGP2(B1), YEBK3 - IGN-R 
+  C132:
+    pincount: 2
+    notes: Main Wire Harness (C428)
+  C133:
+    pincount: 14
+    notes: Main Wire Harness (C425)
+    pinlabels: [WHT, WHT/BLU, BLU/YEL, BRN (A1), RED1 (A3), BLU (A5), YEL (A2), BLK/BLU, RED/BLK, GRN/WHT2, BLK/RED, ORN3, ORN/BLU, BLU/GRN]
+  C134:
+    pincount: 10
+    notes: Main Wire Harness (C426)
+    pinlabels: [RED/YEL, GRN/BLK, YEL, RED/WHT, WHT/BLK, WHT/YEL (D1), YEL/BLU, NC, RED/GRN, NC]
+  C135:
+    pincount: 4 # 10 for A/T
+    notes: Main Wire Harness (C432)
+    pinlabels: [BRN/BLK, WHT, ORN/WHT, RED/BLU]
+  C136:
+    pincount: 14
+    notes: Main Wire Harness (C433)
+    pinlabels: [YEL/GRN1, YEL/RED, BLU/RED, BLK2, BLK1, WHT/GRN, BLU, ORN2, WHT/BLU, WHT/RED, RED, BLK/YEL, YEL/BLK, YEL/WHT]
+  C137:
+    <<: *round_2p
+    notes: VTEC Pressure Switch
+    pinlabels: [LTBLU, BLK/RED]
+  C138:
+    pincount: 1
+    notes: VTEC Solenoid Valve
+    pinlabels: [GRN/YEL]
+    color: GN
+  C139:
+    pincount: 1
+    notes: VTEC Activation
+    pinlabels: [GRN/YEL]
+    color: GY
+  T101:
+    style: simple
+    type: Ring Terminal
+    subtype: 8 AWG
+    color: BK
+    notes: Under-hood fuse/relay box (ALT+)
+  T102:
+    style: simple
+    type: Ring Terminal
+    subtype: 8 AWG
+    color: BK
+    notes: Alternator (ALT+)
+  T103:
+    style: simple
+    type: Ring Terminal
+    subtype: 20 AWG
+    color: YERD
+    notes: Engine Oil Pressure Switch
+  G101:
+    style: simple
+    type: Ring Terminal
+    subtype: 18 AWG
+    color: BK
+    notes: Engine Ground (E)
+    pinlabels: [ECU GND]
+    pins: [1]
