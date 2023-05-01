@@ -60,7 +60,8 @@ connectors:
   C112:
     <<: *round_2p
     notes: Knock Sensor (KS)
-    pinlabels: [RED/BLU (D3), NC]
+    pinlabels: [RED/BLU, NC]
+    # pinlabels: [RED/BLU (D3), NC]
   C113:
     pincount: 3
     notes: Throttle Position (TP) Sensor
@@ -122,15 +123,17 @@ connectors:
     notes: Main Wire Harness (C428)
   C133:
     pincount: 14
-    notes: Main Wire Harness (C425)
-    pinlabels: [WHT, WHT/BLU, BLU/YEL, BRN (A1), RED1 (A3), BLU (A5), YEL (A2), BLK/BLU, RED/BLK, GRN/WHT2, BLK/RED, ORN3, ORN/BLU, BLU/GRN]
+    notes: Main Wire Harness (C425) (Flipped?)
+    pinlabels: [WHT, WHT/BLU, BLU/YEL, BRN, RED1, BLU, YEL, BLK/BLU, RED/BLK, GRN/WHT2, BLK/RED, ORN3, ORN/BLU, BLU/GRN]
+    #pinlabels: [WHT, WHT/BLU, BLU/YEL, BRN (A1), RED1 (A3), BLU (A5), YEL (A2), BLK/BLU, RED/BLK, GRN/WHT2, BLK/RED, ORN3, ORN/BLU, BLU/GRN]
   C134:
     pincount: 10
-    notes: Main Wire Harness (C426)
-    pinlabels: [RED/YEL, GRN/BLK, YEL, RED/WHT, WHT/BLK, WHT/YEL (D1), YEL/BLU, NC, RED/GRN, NC]
+    notes: Main Wire Harness (C426) (Flipped?)
+    pinlabels: [RED/YEL, GRN/BLK, YEL, RED/WHT, WHT/BLK, WHT/YEL, YEL/BLU, PNK, RED/GRN, NC]
+    #pinlabels: [RED/YEL, GRN/BLK, YEL, RED/WHT, WHT/BLK, WHT/YEL (D1), YEL/BLU, NC, RED/GRN, NC]
   C135:
     pincount: 4 # 10 for A/T
-    notes: Main Wire Harness (C432)
+    notes: Main Wire Harness (C432) (Flipped?)
     pinlabels: [BRN/BLK, WHT, ORN/WHT, RED/BLU]
   C136:
     pincount: 14

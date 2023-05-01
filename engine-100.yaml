@@ -5,6 +5,7 @@ cables:
     colors: [BK]
   W101: # Alternator Control
     wirecount: 4
+    notes: "WHGN = ALTC"
     colors: [WHRD, WHGN, WHBU, BKYE]
 
   W106: # IAC Signal
@@ -18,13 +19,16 @@ cables:
     wirecount: 9
     colors: [RDBK, RDBK, RDBK, RDBK, BN, RD, BU, YE, YEBK]
 
-  W108: # IAT to C133
-    wirecount: 1
-    colors: [GNWH]
+  W108: # IAT to C133, C134
+    wirecount: 2
+    colors: [RDYE, GNWH]
+  # W108B: # IAT to C134
+    # wirecount: 1
+    # colors: [RDYE]
 
-  # W109G: # IAB to GND
-  #   wirecount: 1
-  #   colors: [YEBK]
+  W109: # IAB to C134, C131
+    wirecount: 2
+    colors: [BKYE, PK]
 
   W125: # Dizzy Signals to C133/C136 Bulkhead
     wirecount: 8
@@ -62,6 +66,16 @@ connections:
   #   - W106G: 1
   #   - G101: 1
 
+  - # IAB to ECU bulkhead C134
+    - C109: PNK
+    - W109: 2
+    - C134: PNK
+
+  - # IAB to ECU bulkhead C131
+    - C109: BLK/YEL
+    - W109: 1
+    - C131: BLK/YEL1
+
   - # Injector Box to IGN+ (C133)
     - C131: YEL/BLK3
     - W107: 9
@@ -71,26 +85,31 @@ connections:
     - W107: [1-4]
     - C107: [1, 2, 4, 5]
   - # Inj1 to ECU bulkhead C133
-    - C102: 2
+    - C102: BRN
     - W107: 5
-    - C133: 4
+    - C133: BRN
   - # Inj2 to ECU bulkhead C133
-    - C103: 2
+    - C103: RED1
     - W107: 6
-    - C133: 5
+    - C133: RED1
   - # Inj3 to ECU bulkhead C133
-    - C104: 2
+    - C104: BLU
     - W107: 7
-    - C133: 6
+    - C133: BLU
   - # Inj4 to ECU bulkhead C133
-    - C105: 2
+    - C105: YEL
     - W107: 8
-    - C133: 7
+    - C133: YEL
 
   - # IAT to ECU bulkhead C133
     - C108: GRN/WHT2
-    - W108: 1
+    - W108: 2
     - C133: GRN/WHT2
+
+  - # IAT to ECU Bulkhead C134
+    - C108: RED/YEL
+    - W108: 1
+    - C134: RED/YEL
 
   - # Dizzy to ECU Bulkhead C133
     - C125: [ORN3, WHT, ORN/BLU, WHT/BLU, BLU/GRN, BLU/YEL]
