@@ -1,0 +1,20 @@
+# Engine right-side harness
+connectors:
+  C901:
+    pincount: 18
+    notes: 4WS Computer A
+    pinlabels: [GRY/RED, WHT/BLU, GRY/WHT, BLK/YEL, RED, WHT/GRN, PNK, GRN, N/C, BRN/WHT, N/C, BLU, BLU/GRN, GRN/RED, YEL/RED, BLK, GRY/YEL, WHT/YEL]
+    color: GN
+  C902:
+    pincount: 12
+    notes: 4WS Computer B
+    pinlabels: [ORN, GRN, YEL/BLK, YEL/BLU, PNK, BLK, YEL/RED, YEL/GRN, N/C, GRY/BLK, GRY, N/C, N/C, N/C]
+    color: GN
+  C903:
+    pincount: 4
+    pinlabels: [YEL, BLU, N/C, N/C]
+    color: GN
+  T904:
+    pincount: 4
+    pinlabels: [WHT, BRN, RED, BLK]
+    color: GN

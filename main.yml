@@ -50,3 +50,6 @@ connectors:
   C484:
     pincount: 1
     notes: VTEC (TO C139)
+  C477:
+    pincount: 14
+    notes: Cruise Control Module

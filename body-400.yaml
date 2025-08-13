@@ -1,0 +1,6 @@
+cables:
+  W477:
+    wirecount: 14
+    #
+    colors: [LTGRN, GRY, GRN/WHT, LTGRN/RED, LTGRN/BLK]
+    # 
